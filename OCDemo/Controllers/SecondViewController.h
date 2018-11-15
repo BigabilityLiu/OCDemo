@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SecondViewController.h
 //  OCDemo
 //
 //  Created by techcul_iOS on 2018/11/15.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface SecondViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FirstViewController.h"
+#import "RootNavigationViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
