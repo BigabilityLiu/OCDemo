@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SecondViewController.h"
+#import "FirstTableViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

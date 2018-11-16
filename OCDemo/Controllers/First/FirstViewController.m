@@ -15,23 +15,21 @@
 
 @implementation FirstViewController
 
-static NSString *cellIdentifier = @"CELL_IDENTIFIER";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    
-    [self.tableView registerClass:UITableViewCell.self forCellReuseIdentifier:cellIdentifier];
-    // Do any additional setup after loading the view from its nib.
+//    [self.tableView registerClass:[FirstTableViewCell class]
+//           forCellReuseIdentifier:[FirstTableViewCell cellIdentifier]];
+    [self.tableView registerNib:[UINib nibWithNibName:@"FirstTableViewCell" bundle:nil]
+         forCellReuseIdentifier:[FirstTableViewCell cellIdentifier]];
 }
 - (IBAction)present:(id)sender {
     NSLog(@"ready for present");
     SecondViewController *secondVC = [[SecondViewController alloc] init];
     [self.navigationController pushViewController:secondVC animated:true];
-//    [self presentViewController:secondVC animated:true completion:^{
-//        NSLog(@"present completion");
-//    }];
     
 }
 
@@ -39,11 +37,18 @@ static NSString *cellIdentifier = @"CELL_IDENTIFIER";
     return 20;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    if (cell == nil){
-        cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:cellIdentifier];
+    
+    FirstTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[FirstTableViewCell cellIdentifier]
+                                                               forIndexPath:indexPath];
+    if (cell == nil) {
+        NSLog(@"nil cell");
     }
-    cell.textLabel.text = [[NSString alloc] initWithFormat:@"%ld", (long)indexPath.row];
+    cell.index = indexPath.row + 1;
+    [cell update];
+    cell.infoActionCallback = ^{
+        NSLog(@"call back from cell");
+    };
+    
     return cell;
 }
 

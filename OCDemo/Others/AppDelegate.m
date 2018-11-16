@@ -24,6 +24,17 @@
     self.window.rootViewController = navVC;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    
+    Car *mustang = [[Car alloc] init];
+    mustang.make = @"Ford";
+    mustang.color = UIColor.blueColor;
+    
+    [mustang turnOn];
+    [mustang accelerate];
+    [mustang washWindows];
+    [mustang lockCar];
+    
     return YES;
 }
 
