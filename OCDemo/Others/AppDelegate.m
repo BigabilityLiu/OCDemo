@@ -12,8 +12,14 @@
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate 
 
+- (void) turnOn{
+    NSLog(@"turn On");
+}
+- (void) accelerate{
+    NSLog(@"accelerate!");
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -26,15 +32,38 @@
     [self.window makeKeyAndVisible];
     
     
-    Car *mustang = [[Car alloc] init];
-    mustang.make = @"Ford";
-    mustang.color = UIColor.blueColor;
+    Car *mustang = [[Car alloc] initWithFactory:@"Ford" andColor:UIColor.blueColor];
+    NSLog(@"mustang is made by %@, and it's color is %@", mustang.make, mustang.color);
     
-    [mustang turnOn];
-    [mustang accelerate];
+    mustang.delegate = self;
+    [self turnOn];
+    [self accelerate];
+    
     [mustang washWindows];
     [mustang lockCar];
     
+    VideoGameType type = VideoGameRPG | VideoGameFPS;
+    
+    if (type == VideoGameFPS) {
+        NSLog(@"yes VideoGameFPS");
+    }else{
+        NSLog(@"no VideoGameFPS");
+    }
+    if (type == VideoGameRPG) {
+        NSLog(@"yes VideoGameRPG");
+    }else{
+        NSLog(@"no VideoGameRPG");
+    }
+    PlayerType playerType = PlayerTypeEnemy | PlayerTypeAlien;
+    if (playerType & PlayerTypeAlien) {
+        NSLog(@"yes PlayerTypeAlien");
+    }
+    if (playerType & PlayerTypeEnemy) {
+        NSLog(@"yes PlayerTypeEnemy");
+    }
+    if (playerType & PlayerTypePlayer) {
+        NSLog(@"yes PlayerTypePlayer");
+    }
     return YES;
 }
 

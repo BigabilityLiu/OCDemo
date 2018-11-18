@@ -10,14 +10,20 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@protocol CarFunctionsDelegate <NSObject>
+
+- (void) turnOn;
+- (void) accelerate;
+
+@end
 
 @interface Car : NSObject
 
 @property NSString *make;
 @property UIColor *color;
+@property id<CarFunctionsDelegate> delegate;
 
-- (void) turnOn;
-- (void) accelerate;
+- (instancetype)initWithFactory:(NSString *)make andColor:(UIColor *)color;
 
 @end
 

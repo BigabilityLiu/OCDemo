@@ -21,8 +21,6 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-//    [self.tableView registerClass:[FirstTableViewCell class]
-//           forCellReuseIdentifier:[FirstTableViewCell cellIdentifier]];
     [self.tableView registerNib:[UINib nibWithNibName:@"FirstTableViewCell" bundle:nil]
          forCellReuseIdentifier:[FirstTableViewCell cellIdentifier]];
 }

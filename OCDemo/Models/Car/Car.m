@@ -7,15 +7,23 @@
 //
 
 #import "Car.h"
+// 可在这里申明内部函数和方法 
+@interface Car ()
+
+@property BOOL goodToRun;
+
+
+@end
 
 @implementation Car
 
-
-- (void) turnOn{
-    NSLog(@"turn On");
-}
-- (void) accelerate{
-    NSLog(@"accelerate!");
+- (instancetype)initWithFactory:(NSString *)make andColor:(UIColor *)color{
+    if ((self = [super init])) {
+        _make = make;
+        _color = color;
+        _goodToRun = YES;
+    }
+    return self;
 }
 
 @end
