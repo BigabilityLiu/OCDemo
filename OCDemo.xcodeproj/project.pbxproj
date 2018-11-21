@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6249CD85219EF5BB00C36BA5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6249CD84219EF5BB00C36BA5 /* Constants.m */; };
+		627B667721A2EDF300260F6F /* BlockTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 627B667621A2EDF300260F6F /* BlockTester.m */; };
 		AB562F12219D69DF0061C2D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB562F11219D69DF0061C2D7 /* AppDelegate.m */; };
 		AB562F1A219D69E20061C2D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB562F19219D69E20061C2D7 /* Assets.xcassets */; };
 		AB562F1D219D69E20061C2D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB562F1B219D69E20061C2D7 /* LaunchScreen.storyboard */; };
@@ -27,6 +28,8 @@
 /* Begin PBXFileReference section */
 		6249CD83219EF5BB00C36BA5 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		6249CD84219EF5BB00C36BA5 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		627B667521A2EDF300260F6F /* BlockTester.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockTester.h; sourceTree = "<group>"; };
+		627B667621A2EDF300260F6F /* BlockTester.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockTester.m; sourceTree = "<group>"; };
 		AB562F0D219D69DF0061C2D7 /* OCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB562F10219D69DF0061C2D7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AB562F11219D69DF0061C2D7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -167,6 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				AB562F5D219EBC310061C2D7 /* Car */,
+				627B667521A2EDF300260F6F /* BlockTester.h */,
+				627B667621A2EDF300260F6F /* BlockTester.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				AB562F60219EBD850061C2D7 /* Car+Clean.m in Sources */,
 				AB562F3F219E557D0061C2D7 /* FirstTableViewCell.m in Sources */,
 				6249CD85219EF5BB00C36BA5 /* Constants.m in Sources */,
+				627B667721A2EDF300260F6F /* BlockTester.m in Sources */,
 				AB562F20219D69E20061C2D7 /* main.m in Sources */,
 				AB562F5C219EBC2A0061C2D7 /* Car.m in Sources */,
 				AB562F12219D69DF0061C2D7 /* AppDelegate.m in Sources */,

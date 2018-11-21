@@ -7,16 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FirstViewController.h"
-#import "RootNavigationViewController.h"
-//#import "Car.h"
-@class Car;
 
-#import "Car+Clean.h"
-#import "Car+Protected.h"
-#import "Constants.h"
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate, CarFunctionsDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

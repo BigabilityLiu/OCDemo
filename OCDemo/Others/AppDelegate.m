@@ -7,8 +7,17 @@
 //
 
 #import "AppDelegate.h"
+#import "FirstViewController.h"
+#import "RootNavigationViewController.h"
+//#import "Car.h"
+@class Car;
+#import "Car+Clean.h"
+#import "Car+Protected.h"
+#import "Constants.h"
+#import <objc/message.h>
+#import "BlockTester.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <CarFunctionsDelegate>
 
 @end
 
@@ -25,8 +34,7 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     FirstViewController *vc = [[FirstViewController alloc] init];
-    RootNavigationViewController *navVC = [[RootNavigationViewController alloc] init];
-    [navVC addChildViewController:vc];
+    RootNavigationViewController *navVC = [[RootNavigationViewController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navVC;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -41,6 +49,16 @@
     
     [mustang washWindows];
     [mustang lockCar];
+    
+    Class myClass = [mustang class];
+    Class superClass = class_getSuperclass(myClass);
+    NSLog(@"superclass of %@ is %@", NSStringFromClass(myClass), NSStringFromClass(superClass));
+    
+    SEL selector = @selector(lockCar);
+    NSLog(@"Selector: %@", NSStringFromSelector(selector));
+    
+    Method method = class_getClassMethod([mustang class], selector);
+    NSLog(@"%d", method_getNumberOfArguments(method));
     
     VideoGameType type = VideoGameRPG | VideoGameFPS;
     
@@ -64,7 +82,12 @@
     if (playerType & PlayerTypePlayer) {
         NSLog(@"yes PlayerTypePlayer");
     }
+    
+    BlockTester *blockTester = [[BlockTester alloc] init];
+    [blockTester runTests];
+    
     return YES;
+    
 }
 
 
