@@ -21,6 +21,11 @@
 		AB562F5C219EBC2A0061C2D7 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = AB562F5B219EBC2A0061C2D7 /* Car.m */; };
 		AB562F60219EBD850061C2D7 /* Car+Clean.m in Sources */ = {isa = PBXBuildFile; fileRef = AB562F5F219EBD850061C2D7 /* Car+Clean.m */; };
 		AB562F63219EBEC80061C2D7 /* Car+Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = AB562F62219EBEC80061C2D7 /* Car+Protected.m */; };
+		AB889CF721A3EE19009E0E6B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB889CF521A3EE19009E0E6B /* TestViewController.m */; };
+		AB889CF821A3EE19009E0E6B /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB889CF621A3EE19009E0E6B /* TestViewController.xib */; };
+		AB889CFD21A40404009E0E6B /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB889CFB21A40404009E0E6B /* TableViewController.m */; };
+		AB889CFE21A40404009E0E6B /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB889CFC21A40404009E0E6B /* TableViewController.xib */; };
+		ABCB44F721A53E20002A9FEE /* CarDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB44F621A53E20002A9FEE /* CarDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +53,14 @@
 		AB562F5F219EBD850061C2D7 /* Car+Clean.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Car+Clean.m"; sourceTree = "<group>"; };
 		AB562F61219EBEC80061C2D7 /* Car+Protected.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Car+Protected.h"; sourceTree = "<group>"; };
 		AB562F62219EBEC80061C2D7 /* Car+Protected.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Car+Protected.m"; sourceTree = "<group>"; };
+		AB889CF421A3EE19009E0E6B /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		AB889CF521A3EE19009E0E6B /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		AB889CF621A3EE19009E0E6B /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		AB889CFA21A40404009E0E6B /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		AB889CFB21A40404009E0E6B /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		AB889CFC21A40404009E0E6B /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
+		ABCB44F521A53E20002A9FEE /* CarDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarDataManager.h; sourceTree = "<group>"; };
+		ABCB44F621A53E20002A9FEE /* CarDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +106,8 @@
 		AB562F2B219D6A530061C2D7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AB889CF921A403EB009E0E6B /* TableViewController */,
+				AB889CF321A3EDFE009E0E6B /* Test */,
 				AB562F42219E6C830061C2D7 /* Root */,
 				AB562F43219E6C960061C2D7 /* First */,
 				AB562F44219E6C9E0061C2D7 /* Second */,
@@ -175,8 +190,30 @@
 		AB562F64219EC17C0061C2D7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				ABCB44F521A53E20002A9FEE /* CarDataManager.h */,
+				ABCB44F621A53E20002A9FEE /* CarDataManager.m */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		AB889CF321A3EDFE009E0E6B /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				AB889CF421A3EE19009E0E6B /* TestViewController.h */,
+				AB889CF521A3EE19009E0E6B /* TestViewController.m */,
+				AB889CF621A3EE19009E0E6B /* TestViewController.xib */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		AB889CF921A403EB009E0E6B /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AB889CFA21A40404009E0E6B /* TableViewController.h */,
+				AB889CFB21A40404009E0E6B /* TableViewController.m */,
+				AB889CFC21A40404009E0E6B /* TableViewController.xib */,
+			);
+			path = TableViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +277,9 @@
 				AB562F36219D725F0061C2D7 /* SecondViewController.xib in Resources */,
 				AB562F1D219D69E20061C2D7 /* LaunchScreen.storyboard in Resources */,
 				AB562F1A219D69E20061C2D7 /* Assets.xcassets in Resources */,
+				AB889CF821A3EE19009E0E6B /* TestViewController.xib in Resources */,
 				AB562F2A219D6A3E0061C2D7 /* FirstViewController.xib in Resources */,
+				AB889CFE21A40404009E0E6B /* TableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,15 +290,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB889CFD21A40404009E0E6B /* TableViewController.m in Sources */,
 				AB562F39219D76D70061C2D7 /* RootNavigationViewController.m in Sources */,
 				AB562F35219D725F0061C2D7 /* SecondViewController.m in Sources */,
 				AB562F63219EBEC80061C2D7 /* Car+Protected.m in Sources */,
 				AB562F60219EBD850061C2D7 /* Car+Clean.m in Sources */,
+				AB889CF721A3EE19009E0E6B /* TestViewController.m in Sources */,
 				AB562F3F219E557D0061C2D7 /* FirstTableViewCell.m in Sources */,
 				AB562F20219D69E20061C2D7 /* main.m in Sources */,
 				AB562F5C219EBC2A0061C2D7 /* Car.m in Sources */,
 				AB562F12219D69DF0061C2D7 /* AppDelegate.m in Sources */,
 				AB562F29219D6A3E0061C2D7 /* FirstViewController.m in Sources */,
+				ABCB44F721A53E20002A9FEE /* CarDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

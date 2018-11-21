@@ -32,7 +32,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG7-Dx-fcT">
-                    <rect key="frame" x="172.5" y="318.5" width="30" height="30"/>
+                    <rect key="frame" x="0.0" y="318.5" width="187.5" height="30"/>
                     <state key="normal" title="Add"/>
                     <connections>
                         <action selector="addAction:" destination="-1" eventType="touchUpInside" id="RBd-i4-Wzn"/>
@@ -48,28 +48,28 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82T-6u-pzY">
-                    <rect key="frame" x="22" y="41" width="34" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="34" id="9hc-UT-pzx"/>
-                        <constraint firstAttribute="height" constant="30" id="QBs-0i-ogu"/>
-                    </constraints>
-                    <state key="normal" title="back"/>
+                    <rect key="frame" x="187.5" y="318.5" width="187.5" height="30"/>
+                    <state key="normal" title="Delete">
+                        <color key="titleColor" red="1" green="0.1857388616" blue="0.27044092469999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
                     <connections>
-                        <action selector="back:" destination="-1" eventType="touchUpInside" id="eoi-bF-iGo"/>
+                        <action selector="deleteAction:" destination="-1" eventType="touchUpInside" id="D8e-cu-VuX"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="dG7-Dx-fcT" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="3CG-AU-YIb"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="iaO-vm-89Q" secondAttribute="bottom" constant="20" id="DGm-xI-Q5B"/>
-                <constraint firstItem="dG7-Dx-fcT" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Fkz-H0-DgB"/>
-                <constraint firstItem="dG7-Dx-fcT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RsM-07-nlx"/>
-                <constraint firstItem="82T-6u-pzY" firstAttribute="top" secondItem="Dbi-9m-Czm" secondAttribute="bottom" id="U5e-bt-Fgb"/>
+                <constraint firstItem="82T-6u-pzY" firstAttribute="leading" secondItem="dG7-Dx-fcT" secondAttribute="trailing" id="R5Z-Kg-irh"/>
+                <constraint firstItem="dG7-Dx-fcT" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Svv-so-4LX"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="iaO-vm-89Q" secondAttribute="trailing" id="eYf-eH-lKz"/>
+                <constraint firstItem="82T-6u-pzY" firstAttribute="width" secondItem="dG7-Dx-fcT" secondAttribute="width" id="fPj-d6-BJR"/>
                 <constraint firstItem="Dbi-9m-Czm" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="lx7-uI-3Ju"/>
+                <constraint firstItem="82T-6u-pzY" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mWx-sQ-aYF"/>
                 <constraint firstItem="Dbi-9m-Czm" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="pQW-rV-uey"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="82T-6u-pzY" secondAttribute="trailing" id="q1L-AZ-j6P"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Dbi-9m-Czm" secondAttribute="trailing" id="rcZ-iq-Gje"/>
-                <constraint firstItem="82T-6u-pzY" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="22" id="xKD-wk-fmD"/>
                 <constraint firstItem="iaO-vm-89Q" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="xpl-Xk-LuH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>

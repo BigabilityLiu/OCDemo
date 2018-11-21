@@ -13,9 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Car : NSObject
 
-@property NSString *make;
+@property NSString *maker;
 @property UIColor *color;
 
+- (instancetype)initWithMaker:(NSString *)maker color:(UIColor *)color;
 - (void) turnOn;
 - (void) accelerate;
 

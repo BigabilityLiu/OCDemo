@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Car.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,10 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
-- (IBAction)infoAction:(id)sender;
 
-@property (assign, nonatomic) NSInteger index;
-- (void)update;
+- (IBAction)infoAction:(id)sender;
+- (void)updateByIndex:(NSUInteger)index withCars:(NSArray<Car *>*)cars;
+
 @property (nonatomic, copy, nullable) void (^infoActionCallback)(void);
 
 @end

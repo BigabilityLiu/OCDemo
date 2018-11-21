@@ -7,12 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FirstViewController.h"
-#import "RootNavigationViewController.h"
-#import "Car.h"
-#import "Car+Clean.h"
-#import "Car+Protected.h"
-#import "Result.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

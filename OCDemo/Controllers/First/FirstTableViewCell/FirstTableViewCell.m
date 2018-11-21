@@ -8,10 +8,11 @@
 
 #import "FirstTableViewCell.h"
 
+
 @implementation FirstTableViewCell
 
-
 BOOL isGreat = YES;
+NSInteger currentIndex = 0;
 
 + (NSString *)cellIdentifier{
   return @"FirstTableViewCell";
@@ -26,21 +27,24 @@ BOOL isGreat = YES;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }
-- (void)update{
-    self.avatarImageView.image = [UIImage imageNamed:@"ski_new"];
-    self.titleLabel.text = [[NSString alloc] initWithFormat:@"%ld", self.index];
+- (void)updateByIndex:(NSUInteger)index withCars:(NSArray<Car *>*)cars{
+    currentIndex = index;
     
-    NSString *s = [[NSString alloc] initWithFormat:@"这是第%ld个cell", self.index];
+    self.avatarImageView.image = [UIImage imageNamed:@"ski_new"];
+    self.titleLabel.text = cars[index].maker;
+    
+    NSString *s = [[NSString alloc] initWithFormat:@"这是第%ld个cell", currentIndex];
     NSString *detail = @"";
-    for (int i=0; i<self.index - 1; i++) {
+    for (int i=0; i<currentIndex; i++) {
         detail = [detail stringByAppendingString:s];
     }
     self.detailLabel.text = detail;
+    self.detailLabel.textColor = cars[index].color;
     
 }
 - (IBAction)infoAction:(id)sender {
-    self.infoActionCallback();
+    NSLog(@"infoAction: this is number %ld", currentIndex);
     clicked = !clicked;
-    NSLog(@"infoAction: this is number %ld", self.index);
+    self.infoActionCallback();
 }
 @end

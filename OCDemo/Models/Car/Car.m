@@ -10,7 +10,13 @@
 
 @implementation Car
 
-
+- (instancetype)initWithMaker:(NSString *)maker color:(UIColor *)color{
+    if ((self = [super init])) {
+        _maker = maker;
+        _color = color;
+    }
+    return self;
+}
 - (void) turnOn{
     NSLog(@"turn On");
 }

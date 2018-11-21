@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "FirstViewController.h"
+#import "RootNavigationViewController.h"
+#import "Car.h"
+#import "Car+Clean.h"
+#import "Car+Protected.h"
 
 @interface AppDelegate ()
 
@@ -17,18 +22,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    FirstViewController *vc = [[FirstViewController alloc] init];
-    RootNavigationViewController *navVC = [[RootNavigationViewController alloc] init];
-    [navVC addChildViewController:vc];
-    self.window.rootViewController = navVC;
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window = UIWindow.new;
     [self.window makeKeyAndVisible];
     
+    self.window.rootViewController = [[RootNavigationViewController alloc] initWithRootViewController:FirstViewController.new];;
     
-    Car *mustang = [[Car alloc] init];
-    mustang.make = @"Ford";
-    mustang.color = UIColor.blueColor;
+    
+    Car *mustang = [[Car alloc] initWithMaker:@"Ford" color:UIColor.blueColor];
     
     [mustang turnOn];
     [mustang accelerate];
