@@ -11,12 +11,18 @@
 #import "RootNavigationViewController.h"
 #import "Car.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <CarFunctionsDelegate>
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate 
 
+- (void) turnOn{
+    NSLog(@"turn On");
+}
+- (void) accelerate{
+    NSLog(@"accelerate!");
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -31,7 +37,44 @@
     [mustang turnOn];
     [mustang accelerate];
     
+    Class myClass = [mustang class];
+    Class superClass = class_getSuperclass(myClass);
+    NSLog(@"superclass of %@ is %@", NSStringFromClass(myClass), NSStringFromClass(superClass));
+    
+    SEL selector = @selector(lockCar);
+    NSLog(@"Selector: %@", NSStringFromSelector(selector));
+    
+    Method method = class_getClassMethod([mustang class], selector);
+    NSLog(@"%d", method_getNumberOfArguments(method));
+    
+    VideoGameType type = VideoGameRPG | VideoGameFPS;
+    
+    if (type == VideoGameFPS) {
+        NSLog(@"yes VideoGameFPS");
+    }else{
+        NSLog(@"no VideoGameFPS");
+    }
+    if (type == VideoGameRPG) {
+        NSLog(@"yes VideoGameRPG");
+    }else{
+        NSLog(@"no VideoGameRPG");
+    }
+    PlayerType playerType = PlayerTypeEnemy | PlayerTypeAlien;
+    if (playerType & PlayerTypeAlien) {
+        NSLog(@"yes PlayerTypeAlien");
+    }
+    if (playerType & PlayerTypeEnemy) {
+        NSLog(@"yes PlayerTypeEnemy");
+    }
+    if (playerType & PlayerTypePlayer) {
+        NSLog(@"yes PlayerTypePlayer");
+    }
+    
+    BlockTester *blockTester = [[BlockTester alloc] init];
+    [blockTester runTests];
+    
     return YES;
+    
 }
 
 

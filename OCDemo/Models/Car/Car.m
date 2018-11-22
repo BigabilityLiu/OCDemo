@@ -7,6 +7,13 @@
 //
 
 #import "Car.h"
+// 可在这里申明内部函数和方法 
+@interface Car ()
+
+@property BOOL goodToRun;
+
+
+@end
 
 @implementation Car
 
@@ -14,6 +21,7 @@
     if ((self = [super init])) {
         _maker = maker;
         _color = color;
+        _goodToRun = YES;
     }
     return self;
 }
