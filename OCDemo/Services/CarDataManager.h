@@ -11,8 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CarDataManager : NSObject
+
 //TODO: refresh block 异步返回
-//TODO: 建立父类 继承并实现方法
 //TODO: 或者建立Car protocol来实现方法
 
 + (instancetype)instance;

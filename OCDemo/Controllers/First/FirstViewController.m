@@ -12,7 +12,7 @@
 @interface FirstViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (copy, nonatomic) NSArray <Car *> *cars;
+@property (weak, nonatomic) NSArray <Car *> *cars;
 
 @end
 
@@ -30,6 +30,7 @@
 - (void)setupData {
     [[CarDataManager instance] refresh];
     self.cars = [[CarDataManager instance] getAll];
+    
     [self.tableView reloadData];
 }
 - (void)viewWillAppear:(BOOL)animated{

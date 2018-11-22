@@ -39,7 +39,6 @@ static CarDataManager * _manager;
 }
 
 - (void)refresh{
-    
     if (_manager.cars.count == 0) {
         Car *mustang = [[Car alloc] initWithMaker:@"Ford" color: UIColor.blueColor];
         Car *audiA8 = [[Car alloc] initWithMaker:@"Audi" color: UIColor.blackColor];
