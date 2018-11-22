@@ -10,8 +10,6 @@
 #import "FirstViewController.h"
 #import "RootNavigationViewController.h"
 #import "Car.h"
-#import "Car+Clean.h"
-#import "Car+Protected.h"
 
 @interface AppDelegate ()
 
@@ -32,8 +30,6 @@
     
     [mustang turnOn];
     [mustang accelerate];
-    [mustang washWindows];
-    [mustang lockCar];
     
     return YES;
 }
