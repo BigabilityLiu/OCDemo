@@ -9,7 +9,10 @@
 #import "AppDelegate.h"
 #import "FirstViewController.h"
 #import "RootNavigationViewController.h"
+#import "Constants.h"
+#import "BlockTester.h"
 #import "Car.h"
+#import "objc/message.h"
 
 @interface AppDelegate () <CarFunctionsDelegate>
 
@@ -28,12 +31,10 @@
     // Override point for customization after application launch.
     self.window = UIWindow.new;
     [self.window makeKeyAndVisible];
-    
     self.window.rootViewController = [[RootNavigationViewController alloc] initWithRootViewController:FirstViewController.new];;
     
     
     Car *mustang = [[Car alloc] initWithMaker:@"Ford" color:UIColor.blueColor];
-    
     [mustang turnOn];
     [mustang accelerate];
     
@@ -41,7 +42,7 @@
     Class superClass = class_getSuperclass(myClass);
     NSLog(@"superclass of %@ is %@", NSStringFromClass(myClass), NSStringFromClass(superClass));
     
-    SEL selector = @selector(lockCar);
+    SEL selector = @selector(turnOn);
     NSLog(@"Selector: %@", NSStringFromSelector(selector));
     
     Method method = class_getClassMethod([mustang class], selector);

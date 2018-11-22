@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "Car.h"
 #import "CarDataManager.h"
 
 @interface FirstViewController ()
