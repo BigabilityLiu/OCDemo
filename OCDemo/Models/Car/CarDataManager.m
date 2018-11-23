@@ -38,15 +38,22 @@ static CarDataManager * _manager;
     return _manager;
 }
 
-- (void)refresh{
+- (void)refresh:(void (^)(NSArray<Car *>* cars))block{
     if (_manager.cars.count == 0) {
         Car *mustang = [[Car alloc] initWithMaker:@"Ford" color: UIColor.blueColor];
         Car *audiA8 = [[Car alloc] initWithMaker:@"Audi" color: UIColor.blackColor];
         _manager.cars = [[NSMutableArray alloc] initWithObjects:mustang, audiA8, nil];
     }
-}
-- (NSArray<Car *>*)getAll{
-    return _manager.cars;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            block(_manager.cars);
+        });
+    });
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        sleep(3);
+//        block(_manager.cars);
+//    });
+    
 }
 - (void)addCar:(Car *)car{
     [_manager.cars addObject:car];

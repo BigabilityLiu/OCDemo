@@ -24,29 +24,38 @@
     return _counter;
 }
 - (void)setCounter:(NSInteger)counter{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     _counter = counter;
     self.footLabel.text = [[NSString alloc] initWithFormat:@"%ld",(long)counter];
     
+}
+- (IBAction)back:(id)sender {
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = UIColor.lightGrayColor;
+    
     self.headLabel.text = @"Pose Demo";
     self.footLabel.text = @"0";
-    self.counter = [[CarDataManager instance] getAll].count;
+    
+    [[CarDataManager instance] refresh:^(NSArray<Car *> * _Nonnull cars) {
+        NSLog(@"%s", __PRETTY_FUNCTION__);
+        self.counter = cars.count;
+    }];
     
 }
 - (IBAction)deleteAction:(id)sender {
-    self.counter -= 1;
     [[CarDataManager instance] removeLast];
+    self.counter -= 1;
 }
 
 - (IBAction)addAction:(id)sender {
-    self.counter += 1;
     
     Car *car = [[Car alloc] initWithMaker:self.footLabel.text color:UIColor.greenColor];
     [[CarDataManager instance] addCar:car];
+    self.counter += 1;
 }
 
 @end

@@ -47,14 +47,13 @@
     [self doSomethingWithBlock:^(id obj, NSUInteger inx, BOOL *stop) {
         [weakSelf logDone];
     }];
-    
 }
 
 - (void) logDone{
     NSLog(@"Done");
 }
 
-- (void)doSomethingWithBlock:(void (^)(id, NSUInteger, BOOL*))block {
+- (void)doSomethingWithBlock:(void (^)(id obj, NSUInteger inx, BOOL *stop))block {
     self.block = block;
     [self performSelector:@selector(afterOneSecond) withObject:nil afterDelay:1.0];
 }

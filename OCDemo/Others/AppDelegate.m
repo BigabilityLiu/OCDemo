@@ -18,7 +18,9 @@
 
 @end
 
-@implementation AppDelegate 
+@implementation AppDelegate
+
+static int const PrivateKVOContext;
 
 - (void) turnOn{
     NSLog(@"turn On");
@@ -73,11 +75,25 @@
     
     BlockTester *blockTester = [[BlockTester alloc] init];
     [blockTester runTests];
+    [mustang addObserver:self
+              forKeyPath:@"color"
+                 options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
+                 context:&PrivateKVOContext];
+    mustang.color = UIColor.redColor;
+    
+    [mustang removeObserver:self forKeyPath:@"color"];
     
     return YES;
     
 }
-
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if (context == &PrivateKVOContext) {
+        NSLog(@"old= %@, new= %@", change[NSKeyValueChangeOldKey], change[NSKeyValueChangeNewKey]);
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

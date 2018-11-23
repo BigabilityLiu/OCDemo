@@ -10,7 +10,9 @@
 #import "Car.h"
 #import "CarDataManager.h"
 
-@interface FirstViewController ()
+@interface FirstViewController (){
+    SecondViewController *secondVC;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) NSArray <Car *> *cars;
@@ -27,24 +29,38 @@
     self.tableView.delegate = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"FirstTableViewCell" bundle:nil]
          forCellReuseIdentifier:[FirstTableViewCell cellIdentifier]];
+    [self setupData];
 }
 - (void)setupData {
-    [[CarDataManager instance] refresh];
-    self.cars = [[CarDataManager instance] getAll];
-    
-    [self.tableView reloadData];
+    [[CarDataManager instance] refresh:^(NSArray<Car *> * _Nonnull cars) {
+        self.cars = cars;
+        [self.tableView reloadData];
+    }];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self setupData];
 }
 
 - (IBAction)present:(id)sender {
-    NSLog(@"ready for present");
-    SecondViewController *secondVC = [[SecondViewController alloc] init];
-    [self.navigationController pushViewController:secondVC animated:true];
+    secondVC = [[SecondViewController alloc] init];
+    [self.navigationController pushViewController:secondVC animated:YES];
+    [secondVC addObserver:self
+           forKeyPath:@"counter"
+              options:NSKeyValueObservingOptionNew context:nil];
 }
-
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([object isEqual:secondVC] && [keyPath isEqualToString:@"counter"]) {
+        NSLog(@"%s", __PRETTY_FUNCTION__);
+        [self setupData];
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+- (void)dealloc
+{
+    [secondVC removeObserver:self forKeyPath:@"counter"];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.cars.count;
 }
@@ -54,6 +70,7 @@
                                                                forIndexPath:indexPath];
     
     if (cell == nil) {
+        cell = FirstTableViewCell.new;
         NSLog(@"nil cell");
     }
     [cell updateByIndex:indexPath.row withCars:self.cars];

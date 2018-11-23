@@ -56,13 +56,22 @@
                         <action selector="deleteAction:" destination="-1" eventType="touchUpInside" id="D8e-cu-VuX"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIu-gq-fgg">
+                    <rect key="frame" x="16" y="49" width="47" height="30"/>
+                    <state key="normal" title="&lt; back"/>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="h4M-Zg-K2z"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="dG7-Dx-fcT" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="3CG-AU-YIb"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="iaO-vm-89Q" secondAttribute="bottom" constant="20" id="DGm-xI-Q5B"/>
+                <constraint firstItem="DIu-gq-fgg" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="NZN-ro-mJg"/>
                 <constraint firstItem="82T-6u-pzY" firstAttribute="leading" secondItem="dG7-Dx-fcT" secondAttribute="trailing" id="R5Z-Kg-irh"/>
                 <constraint firstItem="dG7-Dx-fcT" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Svv-so-4LX"/>
+                <constraint firstItem="DIu-gq-fgg" firstAttribute="top" secondItem="Dbi-9m-Czm" secondAttribute="bottom" constant="8" id="d87-eD-ZGe"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="iaO-vm-89Q" secondAttribute="trailing" id="eYf-eH-lKz"/>
                 <constraint firstItem="82T-6u-pzY" firstAttribute="width" secondItem="dG7-Dx-fcT" secondAttribute="width" id="fPj-d6-BJR"/>
                 <constraint firstItem="Dbi-9m-Czm" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="lx7-uI-3Ju"/>

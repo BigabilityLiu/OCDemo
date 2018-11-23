@@ -12,13 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CarDataManager : NSObject
 
-//TODO: refresh block 异步返回
 //TODO: 或者建立Car protocol来实现方法
 
 + (instancetype)instance;
 
-- (void)refresh;
-- (NSArray<Car *>*)getAll;
+- (void)refresh:(void (^)(NSArray<Car *>* cars))block;
 - (void)addCar:(Car *)car;
 - (void)removeLast;
 
